@@ -24,8 +24,9 @@ export const useGetData = (url) => {
       .finally(
         setTimeout(() => {
           setLoading(false);
-        }, 500)
+        }, 1500)
       );
   }, [fullUrl]);
+
   return { data, error, loading };
 };
