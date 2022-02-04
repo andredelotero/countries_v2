@@ -2,6 +2,7 @@ import { Fragment, useState } from "react";
 import { Dialog, Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link, useLocation } from "wouter";
+import { useSearch } from "../../Context/SearchContext";
 
 const navigation = {
   pages: [
@@ -21,6 +22,7 @@ function classNames(...classes) {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [location] = useLocation();
+  const { Search } = useSearch();
 
   return (
     <div className="bg-white">
@@ -160,13 +162,7 @@ export default function Navbar() {
                   ))}
                 </div>
               </Popover.Group>
-              <div className="ml-auto flex items-center">
-                {/* Search */}
-                <input
-                  placeholder="search for..."
-                  className="px-4 py-2 border-2 rounded"
-                />
-              </div>
+              {Search()}
             </div>
           </div>
         </nav>
