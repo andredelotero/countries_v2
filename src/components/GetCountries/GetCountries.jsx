@@ -1,6 +1,5 @@
 import { useLocation } from "wouter";
 import { useGetData } from "../../services/getdata";
-import { Card } from "./Card";
 import { useSearch } from "../../Context/SearchContext";
 import { PaginatedItems } from "../Pagination/Pagination";
 
@@ -24,9 +23,8 @@ export const GetCountries = () => {
           <p className="px-4 py-2 rounded border-2 block w-fit mx-auto my-2">
             {newData.length} results
           </p>
-          <section className=" flex  flex-wrap w-11/12 justify-center mx-auto max-w-screen-xxl ">
-            <PaginatedItems data={newData} />
-          </section>
+
+          <PaginatedItems data={newData} />
         </>
       ) : (
         <>{error}</>

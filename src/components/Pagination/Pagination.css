@@ -1,0 +1,39 @@
+.containerPagination,
+.results {
+  display: flex;
+  border: 1px solid #c0c0c0;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  height: 45px;
+  line-height: 45px;
+  width: fit-content;
+  margin: 1rem auto;
+}
+.results {
+  padding-inline: 1rem;
+  margin-bottom: 1rem;
+}
+.containerPagination a {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0 1rem;
+}
+.containerPagination li {
+  border-inline: 1px solid #c0c0c0;
+  list-style: none;
+}
+
+.current {
+  color: white;
+  background-color: #0d6efd;
+}
+
+.moreInformation,
+.countryTitle {
+  color: #00007c;
+  font-weight: 600;
+}
+.countryTitle {
+  font-size: 18px;
+}

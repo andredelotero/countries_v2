@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Card } from "../GetCountries/Card";
+import "./Pagination.css";
 
 function Items({ currentItems }) {
   return (
     <>
-      <div>
+      <div className=" flex  flex-wrap w-11/12 justify-center mx-auto max-w-screen-xxl ">
         {currentItems &&
           currentItems.map((item) => (
             <Card key={item.name.common} country={item} />
@@ -38,9 +39,6 @@ export function PaginatedItems({ data }) {
     <>
       {data.length > 0 ? (
         <>
-          <p className="results">
-            {data.length} {data.length > 1 ? "results" : "result"}
-          </p>
           <Items currentItems={currentItems} />
           <ReactPaginate
             breakLabel="..."
