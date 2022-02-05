@@ -3,17 +3,7 @@ import { Dialog, Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import { Link, useLocation } from "wouter";
 import { useSearch } from "../../Context/SearchContext";
-
-const navigation = {
-  pages: [
-    { name: "All regions", href: "/" },
-    { name: "Africa", href: "/region/Africa" },
-    { name: "America", href: "/region/America" },
-    { name: "Asia", href: "/region/Asia" },
-    { name: "Europe", href: "/region/Europe" },
-    { name: "Oceania", href: "/region/Oceania" },
-  ],
-};
+import { navigation } from "./Navigation";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
