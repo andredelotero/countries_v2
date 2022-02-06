@@ -7,10 +7,12 @@ function Items({ currentItems }) {
   return (
     <>
       <div className=" flex  flex-wrap w-11/12 justify-center mx-auto max-w-screen-xxl ">
-        {currentItems &&
-          currentItems.map((item) => (
-            <Card key={item.name.common} country={item} />
-          ))}
+        {currentItems != null && currentItems.length > 0
+          ? currentItems.map(
+              (item) =>
+                item !== null && <Card key={item.name.common} country={item} />
+            )
+          : null}
       </div>
     </>
   );
