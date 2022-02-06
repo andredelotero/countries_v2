@@ -25,7 +25,6 @@ export const Card = ({ country }) => {
           className="skeleton-klih6epu447"
           style={imageLoaded ? { display: "none" } : {}}
         ></p>
-
         <div className="px-6 py-4">
           <Route path="/name/:id" component={CountryDetail(country)} />
           <Link
