@@ -26,11 +26,12 @@ export const GetCountries = () => {
               newData.length + (newData.length === 1 ? " result" : " results")
             }
           />
-
           <PaginatedItems data={newData} />
         </>
       ) : (
-        <>{error}</>
+        <>
+          <Info info={error} />
+        </>
       )}
     </>
   );
