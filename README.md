@@ -5,6 +5,8 @@ and Styled with [Tailwind CSS](https://tailwindcss.com/)
 
 Fetches data from [Rest Countries](https://restcountries.com/)
 
+## 2022 - André Gama del Otero - Front end (React) developer
+
 ## Available Scripts
 
 In the project directory, you can run:
