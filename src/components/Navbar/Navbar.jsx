@@ -152,7 +152,7 @@ export default function Navbar() {
                   ))}
                 </div>
               </Popover.Group>
-              {Search()}
+              {location.startsWith("/name") ? null : <> {Search()}</>}
             </div>
           </div>
         </nav>
