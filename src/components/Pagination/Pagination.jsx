@@ -53,9 +53,7 @@ export function PaginatedItems({ data }) {
             activeClassName="current"
           />
         </>
-      ) : (
-        <h6 className="results">No results found</h6>
-      )}
+      ) : null}
     </>
   );
 }

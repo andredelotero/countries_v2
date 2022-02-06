@@ -1,5 +1,7 @@
 import { useLocation } from "wouter";
 import { useGetData } from "../../services/getdata";
+import { Info } from "../Info/Info";
+import "../Pagination/Pagination.css";
 
 export const CountryDetail = () => {
   const [location] = useLocation();
@@ -8,7 +10,7 @@ export const CountryDetail = () => {
   return (
     <>
       {loading ? (
-        <p>fetching data</p>
+        <Info info={"loading"} />
       ) : (
         <>
           {!error ? (
@@ -45,7 +47,7 @@ export const CountryDetail = () => {
               </div>
             </>
           ) : (
-            <p>error fetching data</p>
+            <Info info={"error fetching data"} />
           )}
         </>
       )}

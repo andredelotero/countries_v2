@@ -2,6 +2,7 @@ import { useLocation } from "wouter";
 import { useGetData } from "../../services/getdata";
 import { useSearch } from "../../Context/SearchContext";
 import { PaginatedItems } from "../Pagination/Pagination";
+import { Info } from "../Info/Info";
 
 export const GetCountries = () => {
   const [location] = useLocation();
@@ -17,12 +18,14 @@ export const GetCountries = () => {
   return (
     <>
       {loading ? (
-        <h3>loading</h3>
+        <Info info={"loading"} />
       ) : !error ? (
         <>
-          <p className="px-4 py-2 rounded border-2 block w-fit mx-auto my-2">
-            {newData.length} results
-          </p>
+          <Info
+            info={
+              newData.length + (newData.length === 1 ? " result" : " results")
+            }
+          />
 
           <PaginatedItems data={newData} />
         </>
