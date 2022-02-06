@@ -56,7 +56,8 @@ export const CountryDetail = () => {
                   </p>
                   <p className="text-gray-700 text-base">
                     Currency:{" "}
-                    {data.length > 0 && Object?.keys(data[0]?.currencies)}
+                    {data.length > 0 &&
+                      Object.values(data[0]?.currencies)[0]?.name}
                   </p>
                 </div>
               </div>
