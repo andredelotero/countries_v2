@@ -2,16 +2,9 @@ import { useLocation, Link } from "wouter";
 import { useGetData } from "../../services/getdata";
 import { Info } from "../Info/Info";
 
-import { useOnLoadImages } from "../../services/useOnLoadingImages";
-import { useRef } from "react";
-import "../GetCountries/Skeleton.css";
-
 export const CountryDetail = () => {
   const [location] = useLocation();
   const { data, error, loading } = useGetData(location);
-
-  const imgRef = useRef(null);
-  const imageLoaded = useOnLoadImages(imgRef);
 
   return (
     <>
@@ -23,16 +16,11 @@ export const CountryDetail = () => {
             <>
               <div className="max-w-sm m-4 rounded bg-gray-100 overflow-hidden shadow-lg mx-auto border-2">
                 <img
-                  ref={imgRef}
                   className="w-full"
                   src={data[0]?.flags.png}
                   alt={data[0]?.name.common}
-                  style={imageLoaded ? {} : { display: "none" }}
                 />
-                <p
-                  className="skeleton-klih6epu447"
-                  style={imageLoaded ? { display: "none" } : {}}
-                ></p>
+
                 <div className="px-6 py-4">
                   <div className="font-bold text-xl mb-2">
                     {data[0]?.name.common}
