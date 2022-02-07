@@ -19,7 +19,7 @@ export const CountryDetail = () => {
         <Info info={"loading"} />
       ) : (
         <>
-          {!error ? (
+          {!error && data !== null ? (
             <>
               <div className="max-w-sm m-4 rounded bg-gray-100 overflow-hidden shadow-lg mx-auto border-2">
                 <img
@@ -38,7 +38,10 @@ export const CountryDetail = () => {
                     {data[0]?.name.common}
                   </div>
                   <p className="text-gray-700 text-base">
-                    Capital: {data[0]?.capital[0]}
+                    Capital:{" "}
+                    {data[0]?.capital === undefined
+                      ? null
+                      : data[0]?.capital[0]}
                   </p>
                   <p className="text-gray-700 text-base">
                     Population:{" "}
@@ -57,6 +60,7 @@ export const CountryDetail = () => {
                   <p className="text-gray-700 text-base">
                     Currency:{" "}
                     {data.length > 0 &&
+                      data[0]?.currencies !== undefined &&
                       Object.values(data[0]?.currencies)[0]?.name}
                   </p>
                 </div>
