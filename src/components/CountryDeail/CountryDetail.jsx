@@ -21,7 +21,7 @@ export const CountryDetail = () => {
         <>
           {!error ? (
             <>
-              <div className="max-w-sm m-4 rounded overflow-hidden shadow-lg mx-auto border-2">
+              <div className="max-w-sm m-4 rounded bg-gray-100 overflow-hidden shadow-lg mx-auto border-2">
                 <img
                   ref={imgRef}
                   className="w-full"
