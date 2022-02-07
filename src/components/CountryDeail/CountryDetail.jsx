@@ -1,4 +1,4 @@
-import { useLocation } from "wouter";
+import { useLocation, Link } from "wouter";
 import { useGetData } from "../../services/getdata";
 import { Info } from "../Info/Info";
 
@@ -61,6 +61,14 @@ export const CountryDetail = () => {
                   </p>
                 </div>
               </div>
+              <Link
+                href={"/"}
+                className={
+                  "rounded block px-4 py-2 mx-auto w-fit border-2 my-4  text-md font-medium hover:bg-indigo-600 hover:text-white text-gray-900"
+                }
+              >
+                Return to Index
+              </Link>
             </>
           ) : (
             <Info info={"error fetching data"} />
