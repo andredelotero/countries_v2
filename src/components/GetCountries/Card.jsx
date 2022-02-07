@@ -1,5 +1,5 @@
 import { Link } from "wouter";
-import { useOnLoadImages } from "../../services/useOnLoadingImages";
+// import { useOnLoadImages } from "../../services/useOnLoadingImages";
 import { useRef, useEffect, useState } from "react";
 import "./Skeleton.css";
 
@@ -8,7 +8,7 @@ export const Card = ({ country }) => {
   const [data, setData] = useState(null);
 
   const imgRef = useRef(null);
-  const imageLoaded = useOnLoadImages(imgRef);
+  // const imageLoaded = useOnLoadImages(imgRef);
   useEffect(() => {
     setData(country);
   }, [country]);
