@@ -4,11 +4,12 @@ export const useOnLoadImages = (ref) => {
   const [status, setStatus] = useState(false);
 
   let imgRef = ref?.current?.complete;
+
   useEffect(() => {
     if (imgRef) {
       setStatus(true);
     }
+    return;
   }, [imgRef]);
-
   return status;
 };

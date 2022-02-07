@@ -19,7 +19,7 @@ export const CountryDetail = () => {
         <Info info={"loading"} />
       ) : (
         <>
-          {!error && data !== null ? (
+          {!error ? (
             <>
               <div className="max-w-sm m-4 rounded bg-gray-100 overflow-hidden shadow-lg mx-auto border-2">
                 <img

@@ -1,9 +1,11 @@
-.skeleton-klih6epu447 {
+.skeleton {
   position: relative;
+  display: block;
   box-sizing: content-box;
-  height: 216px;
+  height: 190px;
+  max-width: 316px;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 0px 0px 0px 0px;
   background-image: linear-gradient(#f5f7f9 6px, transparent 0),
     linear-gradient(#f5f7f9 6px, transparent 0),
@@ -17,7 +19,7 @@
   background-position: 12px 111px, 12px 92px, 12px 73px, 59px 39px, 59px 21px,
     12px 12px;
 }
-.skeleton-klih6epu447:before {
+.skeleton:before {
   content: " ";
   position: absolute;
   z-index: 1000;
@@ -53,4 +55,11 @@
   to {
     -webkit-mask-position: 120% 0;
   }
+}
+
+.pepe {
+  width: 150px;
+  heigth: 150px;
+  background-color: #000;
+  display: block;
 }
