@@ -1,4 +1,3 @@
-import "./App.css";
 import { Route } from "wouter";
 import { Navbar } from "./components/Navbar/Navbar";
 import { GetCountries } from "./components/GetCountries/GetCountries";
