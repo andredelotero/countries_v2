@@ -3,7 +3,7 @@ import ReactPaginate from "react-paginate";
 import { Card } from "../GetCountries/Card";
 import "./Pagination.css";
 
-function Items({ currentItems }) {
+const Items = ({ currentItems }) => {
   return (
     <>
       <div className=" flex  flex-wrap w-11/12 justify-center mx-auto max-w-screen-xxl ">
@@ -16,9 +16,9 @@ function Items({ currentItems }) {
       </div>
     </>
   );
-}
+};
 
-export function PaginatedItems({ data }) {
+export const PaginatedItems = ({ data }) => {
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
@@ -58,4 +58,4 @@ export function PaginatedItems({ data }) {
       ) : null}
     </>
   );
-}
+};

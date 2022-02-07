@@ -3,7 +3,7 @@ import { useLocation } from "wouter";
 
 export const SearchContext = createContext();
 
-export function SearchProvider(props) {
+export const SearchProvider = (props) => {
   const [searchValue, setSearchValue] = useState("");
   const [location] = useLocation();
 
@@ -30,12 +30,12 @@ export function SearchProvider(props) {
 
   const value = { searchValue, Search };
   return <SearchContext.Provider value={value} {...props} />;
-}
+};
 
-export function useSearch() {
+export const useSearch = () => {
   const context = useContext(SearchContext);
   if (!context) {
     throw new Error("error al cargar los datos en CartContext");
   }
   return context;
-}
+};

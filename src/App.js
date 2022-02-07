@@ -1,11 +1,11 @@
 import "./App.css";
 import { Route } from "wouter";
-import Navbar from "./components/Navbar/Navbar";
+import { Navbar } from "./components/Navbar/Navbar";
 import { GetCountries } from "./components/GetCountries/GetCountries";
 import { CountryDetail } from "./components/CountryDeail/CountryDetail";
 import { SearchProvider } from "./Context/SearchContext";
 
-function App() {
+const App = () => {
   return (
     <>
       <SearchProvider>
@@ -16,6 +16,6 @@ function App() {
       </SearchProvider>
     </>
   );
-}
+};
 
 export default App;

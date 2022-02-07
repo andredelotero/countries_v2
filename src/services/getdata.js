@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export const useGetData = (url) => {
   const partial = url === "/" ? "/all" : url;
-  const fullUrl = "https://restcountries.com/v3.1" + partial;
+  const fullUrl = `${process.env.REACT_APP_COUNTRIES}${partial}`;
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);

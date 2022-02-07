@@ -5,11 +5,11 @@ import { Link, useLocation } from "wouter";
 import { useSearch } from "../../Context/SearchContext";
 import { navigation } from "./Navigation";
 
-function classNames(...classes) {
+const classNames = (...classes) => {
   return classes.filter(Boolean).join(" ");
-}
+};
 
-export default function Navbar() {
+export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [location] = useLocation();
   const { Search } = useSearch();
@@ -159,4 +159,4 @@ export default function Navbar() {
       </header>
     </div>
   );
-}
+};
