@@ -1,38 +1,26 @@
-import { useLocation } from "wouter";
-import { useGetData } from "../../services/getdata";
-import { useSearch } from "../../Context/SearchContext";
 import { PaginatedItems } from "../Pagination/Pagination";
 import { Info } from "../Info/Info";
+import { useEffect } from "react";
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { getCountriesList } from "../../core/countries/thunks";
+import { getCountriesSelector } from "../../core/countries/selectors";
 
 export const GetCountries = () => {
-  const [location] = useLocation();
-  const { searchValue } = useSearch();
-  const { data, error, loading } = useGetData(location);
-
-  const newData = data.filter((filtered) =>
-    filtered.name.common.toUpperCase().startsWith(searchValue.toUpperCase())
-  );
-
-  newData?.sort((a, b) => (a.name.common < b.name.common ? -1 : 1));
+  const dispatch = useDispatch();
+  const data = useSelector((state) => getCountriesSelector(state));
+  useEffect(() => {
+    dispatch(getCountriesList());
+  }, [dispatch]);
 
   return (
     <>
-      {loading ? (
-        <Info info={"loading"} />
-      ) : !error ? (
-        <>
-          <Info
-            info={
-              newData.length + (newData.length === 1 ? " result" : " results")
-            }
-          />
-          <PaginatedItems data={newData} />
-        </>
-      ) : (
-        <>
-          <Info info={error} />
-        </>
-      )}
+      <>
+        <Info
+          info={data?.length + (data?.length === 1 ? " result" : " results")}
+        />
+        <PaginatedItems data={data} />
+      </>
     </>
   );
 };
